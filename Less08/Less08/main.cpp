@@ -5,10 +5,9 @@ using namespace std;
 int main()
 {
 	int size = 0, rows =0, cols = 0;
-	cout << "Enter rows of array:" << endl;
-	cin >> rows;
-	cout << "Enter columns of array:" << endl;
-	cin >> cols;
+	cout << "Enter size of array:" << endl;
+	cin >> size;
+	rows = cols = size;
 
 	//create array1
 	int **arr1 = new int*[rows];
@@ -51,10 +50,21 @@ int main()
 	//multiplication arrays
 	for (int i = 0; i < rows; ++i) {
 		for (int j = 0; j < cols; ++j) {
-			arr3[i][j]=
+			for (int k = 0; k < size; ++k) {
+				arr3[i][j] = arr1[i][k] * arr2[k][j];
+			}
 
 		}
 	}
+	//Output arr3
+	for (int i = 0; i < rows; ++i) {
+		for (int j = 0; j < cols; ++j) {
+			cout << arr3[i][j] << "   ";
+			
+		}
+		cout << endl;
+	}
+
 	///////////////////////////////////////////////////
 	//delete array1
 	for (int i = 0; i < rows; ++i)
