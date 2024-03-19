@@ -13,19 +13,16 @@ on:
 
 jobs:
   test1:
-    
     runs-on: ubuntu-latest
     steps:
-      - name: Run docker login
-        if: github.event.schedule == '*/3 * * * *'
-        run: |
-            echo "Hello"
+      - name: test1
+        if: github.event.schedule != '*/3 * * * *'
+        run: echo "Hello"
         
   test2:
-    
     runs-on: ubuntu-latest
     steps:
-      - name: Run docker login
-        if: github.event.schedule == '*/5 * * * *'
+      - name: test2
+        if: github.event.schedule != '*/5 * * * *'
         run: echo "world"
       
