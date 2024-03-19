@@ -5,12 +5,25 @@ on:
     branches: [ "test" ]
   pull_request:
     branches: [ "test" ]
+  schedule:
+    - cron: '*/3 * * * *' # every 3 min
+    - cron: '*/5 * * * *' # every 5 min 
 
   workflow_dispatch:
 
 jobs:
-  lint-n-sast:
+  test1:
+    if: github.event.schedule == '*/3 * * * *'
     runs-on: ubuntu-latest
     steps:
       - name: Run docker login
-        run: echo "Hello"
+        run: |
+            echo "Hello"
+        
+  test2:
+    if: github.event.schedule == '*/5 * * * *'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run docker login
+        run: echo "world"
+      
