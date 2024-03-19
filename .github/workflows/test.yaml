@@ -1,0 +1,31 @@
+name: lint-n-sast
+
+on:
+  push:
+    branches: [ "test" ]
+  pull_request:
+    branches: [ "test" ]
+  schedule:
+    - cron: '*/3 * * * *' # every 3 min
+    - cron: '*/5 * * * *' # every 5 min 
+
+  workflow_dispatch:
+
+jobs:
+  test1:
+    
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run docker login
+        if: github.event.schedule == '*/3 * * * *'
+        run: |
+            echo "Hello"
+        
+  test2:
+    
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run docker login
+        if: github.event.schedule == '*/5 * * * *'
+        run: echo "world"
+      
