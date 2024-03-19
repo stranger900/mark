@@ -13,16 +13,17 @@ on:
 
 jobs:
   test1:
+    if: github.event.schedule != '*/3 * * * *'
     runs-on: ubuntu-latest
     steps:
       - name: test1
-        if: github.event.schedule != '*/3 * * * *'
+        # if: github.event.schedule != '*/3 * * * *'
         run: echo "Hello"
         
   test2:
+    if: github.event.schedule != '*/5 * * * *'
     runs-on: ubuntu-latest
     steps:
       - name: test2
-        if: github.event.schedule != '*/5 * * * *'
         run: echo "world"
       
