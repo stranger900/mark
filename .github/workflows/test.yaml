@@ -5,9 +5,9 @@ on:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
-  schedule:
-    - cron: '*/3 * * * *' # every 3 min
-    - cron: '*/5 * * * *' # every 5 min 
+  # schedule:
+  #   - cron: '*/3 * * * *' # every 3 min
+  #   - cron: '*/5 * * * *' # every 5 min 
 
   workflow_dispatch:
 
