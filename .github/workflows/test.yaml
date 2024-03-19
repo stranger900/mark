@@ -1,0 +1,16 @@
+name: lint-n-sast
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  workflow_dispatch:
+
+jobs:
+  lint-n-sast:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run docker login
+        run: echo "Hello"
