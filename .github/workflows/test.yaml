@@ -50,7 +50,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: test-report
-        run: echo "test-report"    
+        run: echo "test-report"  
         
       # - name: Publish Report
       #   uses: turing85/publish-report@v1
