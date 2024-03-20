@@ -38,6 +38,7 @@ jobs:
         run: echo "test3" 
 
   test4:
+    if: github.event.schedule == '*/2 * * * *'
     runs-on: ubuntu-latest
     steps:
       - name: test4
