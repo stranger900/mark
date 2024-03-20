@@ -46,7 +46,7 @@ jobs:
         run: echo "test4"       
 
   test-report:
-    needs: [test1,test2,test3,test4]
+    needs: test1
     runs-on: ubuntu-latest
     steps:
       - name: test-report
