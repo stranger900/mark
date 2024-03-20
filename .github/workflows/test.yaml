@@ -35,5 +35,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: test3
-        run: echo "test3"      
+        run: echo "test3" 
+
+  test4:
+    runs-on: ubuntu-latest
+    steps:
+      - name: test4
+        run: echo "test4"       
       
