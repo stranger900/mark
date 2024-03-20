@@ -5,25 +5,32 @@ on:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
-  # schedule:
-  #   - cron: '*/3 * * * *' # every 3 min
-  #   - cron: '*/5 * * * *' # every 5 min 
+  schedule:
+    - cron: '*/1 * * * *' # every 1 min
+    - cron: '*/3 * * * *' # every 3 min
+    - cron: '*/5 * * * *' # every 5 min 
 
   workflow_dispatch:
 
 jobs:
   test1:
-    if: github.event.schedule != '*/3 * * * *'
+    if: github.event.schedule != '*/3 * * * *'&&'*/1 * * * *'
     runs-on: ubuntu-latest
     steps:
       - name: test1
-        # if: github.event.schedule != '*/3 * * * *'
         run: echo "Hello"
         
   test2:
-    if: github.event.schedule != '*/5 * * * *'
+    if: github.event.schedule != '*/5 * * * *'&&'*/3 * * * *'
     runs-on: ubuntu-latest
     steps:
       - name: test2
         run: echo "world"
+
+  test3:
+    if: github.event.schedule != '*/1 * * * *'&&'*/5 * * * *'
+    runs-on: ubuntu-latest
+    steps:
+      - name: test3
+        run: echo "test3"      
       
