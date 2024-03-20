@@ -49,7 +49,7 @@ jobs:
     needs: [test1,test2,test3,test4]
     runs-on: ubuntu-latest
     steps:
-      - name: test
+      - name: test-report
         run: echo "test-report"    
         
       # - name: Publish Report
