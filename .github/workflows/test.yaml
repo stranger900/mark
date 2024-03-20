@@ -5,11 +5,11 @@ on:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
-  schedule:
-    - cron: '*/1 * * * *' # every 1 min
-    - cron: '*/3 * * * *' # every 3 min
-    - cron: '*/5 * * * *' # every 5 min 
-    - cron: '0 16 1 2 *'  # At 16:00 on day-of-month 1 and on Monday in February
+  # schedule:
+  #   - cron: '*/1 * * * *' # every 1 min
+  #   - cron: '*/3 * * * *' # every 3 min
+  #   - cron: '*/5 * * * *' # every 5 min 
+  #   - cron: '0 16 1 2 *'  # At 16:00 on day-of-month 1 and on Monday in February
 
   workflow_dispatch:
 
