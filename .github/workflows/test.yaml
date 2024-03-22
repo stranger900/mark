@@ -79,5 +79,5 @@ jobs:
 
       - name: Output
         run: |
-          echo "${{ steps.capacity_output.outputs.text }}"      
+          echo -e "${{ steps.capacity_output.outputs.text }}"      
             
