@@ -38,12 +38,12 @@ jobs:
       - name: test3
         run: echo "test3" 
 
-  test4:
-    # if: github.event.schedule == '0 16 1 2 *'
-    runs-on: ubuntu-latest
-    steps:
-      - name: test4
-        run: echo "test4"       
+  # test4:
+  #   # if: github.event.schedule == '0 16 1 2 *'
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: test4
+  #       run: echo "test4"       
 
   test-report:
     # if: ${{ always() }}
@@ -54,5 +54,5 @@ jobs:
         run: |
           echo '### Hello  ' >> $GITHUB_STEP_SUMMARY
           echo ' world! ' >> $GITHUB_STEP_SUMMARY
-          cat $GITHUB_STEP_SUMMARY 
+          echo $GITHUB_STEP_SUMMARY 
         shell: bash
