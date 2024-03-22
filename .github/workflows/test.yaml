@@ -73,4 +73,6 @@ jobs:
       - name: print markdown
         run: |
             cat ./capacity.md  
-            echo "CAPACITY_OUTPUT=$(cat ./capacity.md)" >> "$GITHUB_OUTPUT"
+            # echo "CAPACITY_OUTPUT=$(cat ./capacity.md)" >> "$GITHUB_OUTPUT"
+            echo -e "text<<EOF\n$(cat ./capacity.md)\nEOF" >> $GITHUB_OUTPUT
+            
