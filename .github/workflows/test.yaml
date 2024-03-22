@@ -75,10 +75,16 @@ jobs:
         run: |
             cat ./capacity.md  
             # echo "CAPACITY_OUTPUT=$(cat ./capacity.md)" >> "$GITHUB_OUTPUT"
-            echo -e "text<<EOF\n$(cat ./capacity.md)\nEOF" >> $GITHUB_OUTPUT
+            # echo -e "text<<EOF\n$(cat ./capacity.md)\nEOF" >> "$GITHUB_ENV"
+            {
+              echo 'MD_RESPONSE<<EOF'
+              cat ./capacity.md
+              echo EOF
+            } >> "$GITHUB_ENV"
 
       - name: Output
         run: |
-          echo -e "${{ steps.capacity_output.outputs.text }}"  
-          echo -e "${{ text<<EOF\n${{ steps.capacity_output.outputs.text }}\nEOF }}"
+          # echo -e "${{ steps.capacity_output.outputs.text }}"  
+          # echo -e "${{ text<<EOF\n${{ steps.capacity_output.outputs.text }}\nEOF }}"
+          echo "$MD_RESPONSE"
             
