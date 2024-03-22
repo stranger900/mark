@@ -60,12 +60,16 @@ jobs:
       #     cat $GITHUB_STEP_SUMMARY 
       #   shell: bash
 
-      - name: print markdown
+      - name: adding markdown
         run: |
             echo "**CAPACITY**:" >./capacity.md
             echo '```' >>./capacity.md
-            echo 'test' >>./capacity.log
-            echo '```' >>./capacity.log
+            echo 'test' >>./capacity.md
+            echo '```' >>./capacity.md
             
-            cat ./capacity.log
+            cat ./capacity.md
         shell: bash  
+
+      - name: print markdown
+        run: |
+            cat ./capacity.md  
