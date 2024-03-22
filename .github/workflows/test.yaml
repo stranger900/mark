@@ -46,9 +46,12 @@ jobs:
         run: echo "test4"       
 
   test-report:
-    if: ${{ always() }}
-    needs: [test1, test2, test3, test4]
+    # if: ${{ always() }}
+    # needs: [test1, test2, test3, test4]
     runs-on: ubuntu-latest
     steps:
-      - name: test-report
-        run: echo "test-report"
+      - name: Adding markdown
+        run: |
+          echo '### Hello world! ' >> $GITHUB_STEP_SUMMARY
+          cat $GITHUB_STEP_SUMMARY 
+        shell: bash
