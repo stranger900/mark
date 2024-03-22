@@ -52,6 +52,7 @@ jobs:
     steps:
       - name: Adding markdown
         run: |
-          echo '### Hello world! ' >> $GITHUB_STEP_SUMMARY
+          echo '### Hello  ' >> $GITHUB_STEP_SUMMARY
+          echo ' world! ' >> $GITHUB_STEP_SUMMARY
           cat $GITHUB_STEP_SUMMARY 
         shell: bash
