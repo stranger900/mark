@@ -54,6 +54,13 @@ jobs:
         run: |
           echo '### Hello  ' >> $GITHUB_STEP_SUMMARY
           echo ' world! ' >> $GITHUB_STEP_SUMMARY
-          echo $GITHUB_STEP_SUMMARY 
+          echo "1"
+          echo "$GITHUB_STEP_SUMMARY"
+          echo "2"
           cat $GITHUB_STEP_SUMMARY 
         shell: bash
+
+      - name: print markdown
+        run: |
+          cat $GITHUB_STEP_SUMMARY 
+        shell: bash  
