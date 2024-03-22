@@ -50,17 +50,22 @@ jobs:
     # needs: [test1, test2, test3, test4]
     runs-on: ubuntu-latest
     steps:
-      - name: Adding markdown
-        run: |
-          echo '### Hello  ' >> $GITHUB_STEP_SUMMARY
-          echo ' world! ' >> $GITHUB_STEP_SUMMARY
-          echo "1"
-          echo "$GITHUB_STEP_SUMMARY"
-          echo "2"
-          cat $GITHUB_STEP_SUMMARY 
-        shell: bash
+      # - name: Adding markdown
+      #   run: |
+      #     echo '### Hello  ' >> $GITHUB_STEP_SUMMARY
+      #     echo ' world! ' >> $GITHUB_STEP_SUMMARY
+      #     echo "1"
+      #     echo "$GITHUB_STEP_SUMMARY"
+      #     echo "2"
+      #     cat $GITHUB_STEP_SUMMARY 
+      #   shell: bash
 
       - name: print markdown
         run: |
-          cat $GITHUB_STEP_SUMMARY 
+            echo "**CAPACITY**:" >./capacity.md
+            echo '```' >>./capacity.md
+            echo 'test' >>./capacity.log
+            echo '```' >>./capacity.log
+            
+            cat ./capacity.log
         shell: bash  
