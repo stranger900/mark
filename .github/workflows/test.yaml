@@ -55,4 +55,5 @@ jobs:
           echo '### Hello  ' >> $env:GITHUB_STEP_SUMMARY
           echo ' world! ' >> $env:GITHUB_STEP_SUMMARY
           echo $GITHUB_STEP_SUMMARY 
+          cat $GITHUB_STEP_SUMMARY 
         shell: bash
