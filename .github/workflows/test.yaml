@@ -71,8 +71,13 @@ jobs:
         shell: bash  
 
       - name: print markdown
+        id: capacity_output
         run: |
             cat ./capacity.md  
             # echo "CAPACITY_OUTPUT=$(cat ./capacity.md)" >> "$GITHUB_OUTPUT"
             echo -e "text<<EOF\n$(cat ./capacity.md)\nEOF" >> $GITHUB_OUTPUT
+
+      - name: Output
+        run: |
+          echo "${{ steps.capacity_output.outputs.text }}"      
             
